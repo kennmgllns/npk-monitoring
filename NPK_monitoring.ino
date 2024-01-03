@@ -47,21 +47,21 @@ void loop() {
   Serial.println("\ttemperature: "+String(air.temp));
 
   npk.getNPK();
-  Serial.print("N P K");
+  Serial.println("N P K");
   Serial.print("nitrogen: "+String(npk.nitrogen));
   Serial.print("\tphosphorous: "+String(npk.phosphorous));
   Serial.print("\tpotassium: "+String(npk.potassium));
 
   ph.getPHLevel();
-  Serial.print("P H");
+  Serial.println("P H");
   Serial.println("level: "+String(ph.level));
 
   getTDS();
-  Serial.print("T D S");
+  Serial.println("T D S");
   Serial.println("total: "+String(tds));
 
   feeder.getLevel();
-  Serial.print("Fish Feed");
+  Serial.println("Fish Feed");
   Serial.println("level: "+String(feeder.level));
 
   monitorLevels();
