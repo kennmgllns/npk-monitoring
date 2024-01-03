@@ -31,14 +31,14 @@ void monitorLevels(){  // function to monitor sensors data and if they breached 
     alerts[i] = true;
   }
   
-  if(water.level() <= water.level_threshold_min){
+  if(water.level <= water.level_threshold_min){
     /*
      *   water is low, adding water
      */
      lights(ALERT); // activate red lights
      water.pump(true);  //activate water pump to incease water
   }
-  else if(water.level() >= water.level_threshold_max){ //this depends on the water level control mechanism (if can decrease/increase water)
+  else if(water.level >= water.level_threshold_max){ //this depends on the water level control mechanism (if can decrease/increase water)
     /*
      *   water overflow, decreasing water
      */
@@ -51,14 +51,14 @@ void monitorLevels(){  // function to monitor sensors data and if they breached 
      */
      thresholdBreach(0,false);  // set sensor alert flag to false
   }
-  if(water.temp() <= water.temp_threshold_min){
+  if(water.temp <= water.temp_threshold_min){
     /*
      *   water too cold (heater on)
      */
      lights(ALERT);
      water.activateHeater();
   }
-  else if(water.temp() >= water.temp_threshold_max){
+  else if(water.temp >= water.temp_threshold_max){
      /*
      *   water too hot (aerator on)
      */
